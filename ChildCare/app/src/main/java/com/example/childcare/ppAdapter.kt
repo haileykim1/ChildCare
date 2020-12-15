@@ -56,8 +56,11 @@ class ppAdapter(val item1:ArrayList<ccProtect>, val item2:ArrayList<ccPlay>, val
                 holder.itemDes.text = item1[position].nameAddr
 
         }else{
-            holder.itemName.text = "이름"
-            holder.itemDes.text = "설명"
+            holder.itemName.text = item2[position].playName
+            holder.itemDes.text = item2[position].rAddr
+
+            if(holder.itemDes.text.equals(""))
+                holder.itemDes.text = item2[position].nAddr
 
         }
     }

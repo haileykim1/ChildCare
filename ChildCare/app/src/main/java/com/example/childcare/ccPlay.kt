@@ -4,8 +4,8 @@ data class ccPlay (
     val playName:String?, //놀이시설명 : ciName
     val nAddr:String?, //지번주소 :
     val rAddr:String?, //도로명주소 :
-    val sub:String?, //부대시설 : ciSub
-    val area:String?, //시설면적 : ciArea
-    val code:String? //설치장소코드 : code1
+    val locate:String?, //설치장소코드명
+    val name4:String?, //민간공공구분코드명
+    val name21:String? //실내외구분코드명
 
 )

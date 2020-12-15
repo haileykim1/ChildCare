@@ -85,6 +85,9 @@ class protectPlayFragment : Fragment() {
                 processProtect()
                 aboutAdapter()
 
+            }else{
+                processPlay();
+                aboutAdapter();
             }
 
         }
@@ -121,6 +124,68 @@ class protectPlayFragment : Fragment() {
 
 
         ppRcyView?.adapter = adapter
+    }
+
+    fun processPlay(){
+        val editQuery = ppEdit.text;
+        var urlBuilder:StringBuilder = StringBuilder("https://1qwds6aaii.execute-api.us-east-1.amazonaws.com/ccPlay")
+        urlBuilder.append("?pName=" + editQuery);
+
+        var url:URL = URL(urlBuilder.toString());
+        var conn: HttpURLConnection = url.openConnection() as HttpURLConnection;
+        conn.setRequestMethod("GET");
+        var rd:BufferedReader;
+        if(conn.responseCode >= 200 && conn.responseCode <= 300){
+            rd = BufferedReader(InputStreamReader(conn.inputStream));
+        }else{
+            rd = BufferedReader(InputStreamReader(conn.errorStream));
+        }
+        var sb:StringBuilder = StringBuilder();
+        var line:String?;
+
+        line = rd.readLine();
+        while(true){
+            sb.append(line);
+            line = rd.readLine();
+            if(line == null)
+                break;
+        }
+        rd.close();
+        conn.disconnect();
+        var jsonData:JSONObject? = null;
+        jsonData = JSONObject(sb.toString())
+        if(jsonData.getJSONObject("response").getJSONObject("body").getJSONObject("items").has("item")){
+            var result1 = jsonData.getJSONObject("response").getJSONObject("body").getJSONObject("items")
+            var resultJsonArray: JSONArray;
+            try{
+
+                resultJsonArray = result1.getJSONArray("item")
+            }catch (e:Exception) {
+                //검색 결과가 한개인 경우
+                resultJsonArray = JSONArray()
+                resultJsonArray.put(result1.getJSONObject("item"))
+            }
+
+            for(i in 0..resultJsonArray.length() - 1){
+                var pItem = JSONObject(resultJsonArray.get(i).toString())
+                var item = Array(6){ i -> ""}
+
+                var ppProtectStrings = arrayOf("ciName", "ciNaddr2", "ciRaddr1", "name1", "name4", "name21");
+
+                for(j in 0..5){
+                    if(pItem.has(ppProtectStrings[j])){
+                        if(pItem.getJSONObject(ppProtectStrings[j]).has("_text"))
+                            item[j] = pItem.getJSONObject(ppProtectStrings[j]).getString("_text")
+                    }
+                }
+                array2.add(ccPlay(item[0], item[1], item[2], item[3], item[4], item[5]));
+
+            }
+
+        }else{
+            Toast.makeText(context, "검색 결과 없음", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     fun processProtect(){
