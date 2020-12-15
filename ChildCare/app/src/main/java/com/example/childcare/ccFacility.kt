@@ -1,17 +1,28 @@
 package com.example.childcare
 
+import com.google.gson.annotations.SerializedName
+
 data class ccFacility (
-    val facName:String?, //어린이집명
-    val facTypeName:String?, //어린이집유형구분
-    val facStatus:String?, //어린이집유형구분
-    val facAddr:String?, //상세주소
-    val facTelno:String?, //어린이집전화번호
-    val cctvCnt:Int?, //cctv설치수
-    val teacherCnt:Int?, //보육직원수
-    val maxChildCnt:Int?, //정원수
-    val nowChildCnt:Int?, //현원수
-    val ccBus:String?, //통학차량운영여부
-    val la:String?, //위도
-    val lo:String? //경도
+    @SerializedName("KIDGARTN_NM")val KIDGARTN_NM:String?, //어린이집명
+    @SerializedName("SIDO_NM")val SIDO_NM:String?, //시도명
+    @SerializedName("SIGNGU_NM")val SIGNGU_NM:String?, //시군구명
+    @SerializedName("KIDGARTN_DIV_NM")val KIDGARTN_DIV_NM:String?, //어린이집유형구분
+    @SerializedName("PSN_CAPA_CNT")val PSN_CAPA_CNT:String?, //정원수
+    @SerializedName("CHLDCARE_SCHLSTAF_CNT")val CHLDCARE_SCHLSTAF_CNT:String?, //보육교직원수
+    @SerializedName("REFINE_ROADNM_ADDR")val REFINE_ROADNM_ADDR:String?, //소재지도로명주소
+    @SerializedName("KIDGARTN_TELNO")val KIDGARTN_TELNO:String?, //어린이집전화번호
+    @SerializedName("KIDGARTN_FAXNO")val KIDGARTN_FAXNO:String?, //어린이집팩스번호
+    @SerializedName("CHLDCR_ROOM_CNT")val CHLDCR_ROOM_CNT:String?, //보육실수
+    @SerializedName("PLAYGRND_CNT")val PLAYGRND_CNT:String?, //놀이터수
+    @SerializedName("CCTV_INSTL_CNT")val CCTV_INSTL_CNT:String?, //CCTV설치수
+    @SerializedName("ATNDSKL_VEHCLE_OPERT_YN")val ATNDSKL_VEHCLE_OPERT_YN:String?, //통학차량운영여부
+    @SerializedName("HMPG_ADDR")val HMPG_ADDR:String?, //홈페이지주소
+    @SerializedName("DATA_STD_DE")val DATA_STD_DE:String?, //데이터기준일자
+    @SerializedName("SIGUN_NM")val SIGUN_NM:String?, //시군명
+    @SerializedName("SIGUN_CD")val SIGUN_CD:String?, //시군코드
+    @SerializedName("REFINE_ZIP_CD")val REFINE_ZIP_CD:String?, //소재지우편번호
+    @SerializedName("REFINE_LOTNO_ADDR")val REFINE_LOTNO_ADDR:String?, //소재지지번주소
+    @SerializedName("REFINE_WGS84_LOGT")val REFINE_WGS84_LOGT:String?, //WGS84경도
+    @SerializedName("REFINE_WGS84_LAT")val REFINE_WGS84_LAT:String? //WGS84위도
 
 )
