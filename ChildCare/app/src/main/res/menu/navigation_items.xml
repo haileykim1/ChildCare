@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_ccFacilities"
+        android:title="보육"
+        android:icon="@drawable/ic_school_black_24dp"/>
+
+    <item
+        android:id="@+id/nav_protectionplay"
+        android:title="보호/놀이"
+        android:icon="@drawable/ic_child_care_black_24dp"/>
+
+    <item
+        android:id="@+id/nav_vaccination"
+        android:title="접종기관"
+        android:icon="@drawable/ic_healing_black_24dp"/>
+
+    <item
+        android:id="@+id/nav_cclocation"
+        android:title="어린이 위치"
+        android:icon="@drawable/ic_location_on_black_24dp"/>
+</menu>
