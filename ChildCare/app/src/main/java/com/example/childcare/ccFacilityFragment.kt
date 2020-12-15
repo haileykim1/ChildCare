@@ -116,10 +116,12 @@ class ccFacilityFragment : Fragment() {
 
         rd.close();
         conn.disconnect();
+
+        searchQuery()
     }
 
     fun aboutAdapter(){
-        adapter = ccFacAdapter(array1)
+        adapter = ccFacAdapter(array2)
 
         adapter.itemClickListener = object:ccFacAdapter.OnItemClickListener{
             override fun OnItemClick(
@@ -134,6 +136,16 @@ class ccFacilityFragment : Fragment() {
 
         ccFacRcyView?.adapter = adapter
 
+    }
+    private fun searchQuery(){
+        val queryName:String = ccFacEdit.text.toString()
+        for(item in array1){
+            if(item.KIDGARTN_NM?.contains(queryName)!!){
+                array2.add(item)
+            }
+        }
+        if(array2.size == 0)
+            Toast.makeText(context, "검색 결과 없음", Toast.LENGTH_SHORT).show()
     }
 
 }

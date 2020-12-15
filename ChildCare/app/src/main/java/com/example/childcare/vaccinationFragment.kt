@@ -116,14 +116,16 @@ class vaccinationFragment : Fragment() {
 
         val myType = object: TypeToken<ArrayList<ccVaccination>>(){}.type;
         array1 = gson.fromJson(jsonBase.toString(), myType)
-        System.out.println(array1.size);
+        //System.out.println(array1.size);
 
         rd.close();
         conn.disconnect();
+        searchQuery()
+
     }
 
     fun aboutAdapter(){
-        adapter = vaccAdapter(array1)
+        adapter = vaccAdapter(array2)
 
         adapter.itemClickListener = object:vaccAdapter.OnItemClickListener{
             override fun OnItemClick(
@@ -137,5 +139,16 @@ class vaccinationFragment : Fragment() {
         }
 
         vaccRcyView?.adapter = adapter
+    }
+
+    private fun searchQuery(){
+        val queryName:String = vaccEdit.text.toString()
+        for(item in array1){
+            if(item.FACLT_NM?.contains(queryName)!!){
+                array2.add(item)
+            }
+        }
+        if(array2.size == 0)
+            Toast.makeText(context, "검색 결과 없음", Toast.LENGTH_SHORT).show()
     }
 }
