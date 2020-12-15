@@ -126,7 +126,7 @@ class protectPlayFragment : Fragment() {
         ppRcyView?.adapter = adapter
     }
 
-    fun processPlay(){
+    private fun processPlay(){
         val editQuery = ppEdit.text;
         var urlBuilder:StringBuilder = StringBuilder("https://1qwds6aaii.execute-api.us-east-1.amazonaws.com/ccPlay")
         urlBuilder.append("?pName=" + editQuery);
@@ -188,7 +188,7 @@ class protectPlayFragment : Fragment() {
 
     }
 
-    fun processProtect(){
+    private fun processProtect(){
         val editQuery = ppEdit.text;
         var urlBuilder:StringBuilder = StringBuilder("https://1qwds6aaii.execute-api.us-east-1.amazonaws.com/ccProtect")/*URL*/
         urlBuilder.append("?pName=" + editQuery);
