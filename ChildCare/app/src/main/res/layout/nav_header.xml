@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:paddingTop="90dp"
     android:paddingLeft="10dp"
+    android:background="@drawable/textline2"
     android:gravity="bottom">
     <TextView
         android:layout_width="match_parent"

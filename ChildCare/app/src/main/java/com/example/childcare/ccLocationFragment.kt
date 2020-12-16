@@ -1,15 +1,22 @@
 package com.example.childcare
 
 import android.os.Bundle
+import android.provider.DocumentsContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.android.gms.dynamic.SupportFragmentWrapper
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import com.mongodb.*
+import com.mongodb.client.MongoCollection
+import com.mongodb.client.MongoDatabase
+import kotlinx.android.synthetic.main.fragment_cc_location.*
+import org.w3c.dom.Document
 
 /**
  * A simple [Fragment] subclass.
@@ -37,6 +44,23 @@ class ccLocationFragment : Fragment() , OnMapReadyCallback {
     }
 
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+
+        locationButton.setOnClickListener {
+            val temp = locEdit.text
+            System.out.println(temp)
+            if(!isClicked ){
+                Toast.makeText(context, "마커정보를 지정하십시오.", Toast.LENGTH_SHORT).show()
+            }else if(locEdit.text.toString().equals("")) {
+                Toast.makeText(context, "이름정보 를 지정하십시오.", Toast.LENGTH_SHORT).show()
+            }else{
+                Toast.makeText(context, "DB등록", Toast.LENGTH_SHORT).show()
+            }
+        }
+
+    }
+
     override fun onMapReady(p0: GoogleMap?) {
         mMap = p0!!
 
@@ -46,6 +70,10 @@ class ccLocationFragment : Fragment() , OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(defLoc))
 
         mMap.animateCamera(CameraUpdateFactory.zoomTo(15.toFloat()))
+
+        //기존 데이터베이스 목록 가져오기
+
+
 
         mMap.setOnMapClickListener(GoogleMap.OnMapClickListener {
             System.out.println("터치")

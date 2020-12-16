@@ -13,6 +13,7 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/locEdit"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:hint="사용자 이름 입력"

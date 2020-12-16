@@ -30,40 +30,40 @@ data class ccFacility (
     override fun toString(): String {
         return "어린이집명 : " + KIDGARTN_NM +
                 "\n" +
-                " 시도명 : " + KIDGARTN_NM +
+                " 시도명 : " + SIDO_NM +
                 "\n" +
-                " 시군구명 : " + KIDGARTN_NM +
+                " 시군구명 : " + SIGNGU_NM +
                 "\n" +
-                " 어린이집유형구분 : " + KIDGARTN_NM +
+                " 어린이집유형구분 : " + KIDGARTN_DIV_NM +
                 "\n" +
-                " 정원수 : " + KIDGARTN_NM +
+                " 정원수 : " + PSN_CAPA_CNT +
                 "\n" +
-                " 보육교직원수 : " + KIDGARTN_NM +
+                " 보육교직원수 : " + CHLDCARE_SCHLSTAF_CNT +
                 "\n" +
-                " 소재지도로명주소 : " + KIDGARTN_NM +
+                " 소재지도로명주소 : " + REFINE_ROADNM_ADDR +
                 "\n" +
-                " 어린이집전화번호 : " + KIDGARTN_NM +
+                " 어린이집전화번호 : " + KIDGARTN_TELNO +
                 "\n" +
-                " 어린이집팩스번호 : " + KIDGARTN_NM +
+                " 어린이집팩스번호 : " + KIDGARTN_FAXNO +
                 "\n" +
-                " 보육실수 : " + KIDGARTN_NM +
+                " 보육실수 : " + CHLDCR_ROOM_CNT +
                 "\n" +
-                " 놀이터수 : " + KIDGARTN_NM +
+                " 놀이터수 : " + PLAYGRND_CNT +
                 "\n" +
-                " CCTV설치수 : " + KIDGARTN_NM +
+                " CCTV설치수 : " + CCTV_INSTL_CNT +
                 "\n" +
-                " 통학차량운영여부 : " + KIDGARTN_NM +
+                " 통학차량운영여부 : " + ATNDSKL_VEHCLE_OPERT_YN +
                 "\n" +
-                " 홈페이지주소 : " + KIDGARTN_NM +
+                " 홈페이지주소 : " + HMPG_ADDR +
                 "\n" +
-                " 데이터기준일자 : " + KIDGARTN_NM +
+                " 데이터기준일자 : " + DATA_STD_DE +
                 "\n" +
-                " 시군명 : " + KIDGARTN_NM +
+                " 시군명 : " + SIGUN_NM +
                 "\n" +
-                " 시군코드 : " + KIDGARTN_NM +
+                " 시군코드 : " + SIGUN_CD +
                 "\n" +
-                " 소재지우편번호 : " + KIDGARTN_NM +
+                " 소재지우편번호 : " + REFINE_ZIP_CD +
                 "\n" +
-                " 소재지지번주소 : " + KIDGARTN_NM
+                " 소재지지번주소 : " + REFINE_LOTNO_ADDR
     }
 }
