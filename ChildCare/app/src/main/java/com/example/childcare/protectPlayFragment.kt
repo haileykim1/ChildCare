@@ -109,7 +109,8 @@ class protectPlayFragment : Fragment() {
                 data: ccProtect,
                 position: Int
             ) {
-                Toast.makeText(context, "상세한 아이템1", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "상세한 아이템1", Toast.LENGTH_SHORT).show()
+                ccProtectItem(data).show(fragmentManager!!, "ccPlay $position")
             }
 
             override fun OnItemClick2(
@@ -118,7 +119,8 @@ class protectPlayFragment : Fragment() {
                 data: ccPlay,
                 position: Int
             ) {
-                Toast.makeText(context, "상세한 아이템2", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "상세한 아이템2", Toast.LENGTH_SHORT).show()
+                ccPlayItem(data).show(fragmentManager!!, "ccPlay $position")
             }
         }
 

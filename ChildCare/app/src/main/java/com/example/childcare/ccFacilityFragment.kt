@@ -130,7 +130,8 @@ class ccFacilityFragment : Fragment() {
                 data: ccFacility,
                 position: Int
             ) {
-                Toast.makeText(context, "상세 정보 출력", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "상세 정보 출력", Toast.LENGTH_SHORT).show()
+                ccFacItem(data).show(fragmentManager!!, "ccFacItem $position")
             }
         }
 

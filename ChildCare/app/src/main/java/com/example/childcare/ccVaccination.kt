@@ -14,4 +14,22 @@ data class ccVaccination (
     @SerializedName("APPONT_DE")val APPONT_DE:String?, //지정일자
     @SerializedName("REFINE_WGS84_LAT")val REFINE_WGS84_LAT:String?, //위도 : REFINE_WGS84_LAT
     @SerializedName("REFINE_WGS84_LOGT")val REFINE_WGS84_LOGT:String? //경도 : REFINE_WGS84_LOGT
-)
+){
+    override fun toString(): String {
+        return "시군명 : " + SIGUN_NM +
+                "\n" +
+                " 시군코드 : " + SIGUN_CD +
+                "\n" +
+                " 시설명 : " + FACLT_NM +
+                "\n" +
+                " 전화번호 : " + TELNO +
+                "\n" +
+                " 데이터기준일자 : " + DATA_STD_DE +
+                "\n" +
+                " 소재지 우편번호 : " + REFINE_ZIP_CD +
+                "\n" +
+                " 도로명주소 : " + REFINE_ROADNM_ADDR +
+                "\n" +
+                " 지정일자 : " + APPONT_DE
+    }
+}

@@ -25,4 +25,45 @@ data class ccFacility (
     @SerializedName("REFINE_WGS84_LOGT")val REFINE_WGS84_LOGT:String?, //WGS84경도
     @SerializedName("REFINE_WGS84_LAT")val REFINE_WGS84_LAT:String? //WGS84위도
 
-)
+){
+
+    override fun toString(): String {
+        return "어린이집명 : " + KIDGARTN_NM +
+                "\n" +
+                " 시도명 : " + KIDGARTN_NM +
+                "\n" +
+                " 시군구명 : " + KIDGARTN_NM +
+                "\n" +
+                " 어린이집유형구분 : " + KIDGARTN_NM +
+                "\n" +
+                " 정원수 : " + KIDGARTN_NM +
+                "\n" +
+                " 보육교직원수 : " + KIDGARTN_NM +
+                "\n" +
+                " 소재지도로명주소 : " + KIDGARTN_NM +
+                "\n" +
+                " 어린이집전화번호 : " + KIDGARTN_NM +
+                "\n" +
+                " 어린이집팩스번호 : " + KIDGARTN_NM +
+                "\n" +
+                " 보육실수 : " + KIDGARTN_NM +
+                "\n" +
+                " 놀이터수 : " + KIDGARTN_NM +
+                "\n" +
+                " CCTV설치수 : " + KIDGARTN_NM +
+                "\n" +
+                " 통학차량운영여부 : " + KIDGARTN_NM +
+                "\n" +
+                " 홈페이지주소 : " + KIDGARTN_NM +
+                "\n" +
+                " 데이터기준일자 : " + KIDGARTN_NM +
+                "\n" +
+                " 시군명 : " + KIDGARTN_NM +
+                "\n" +
+                " 시군코드 : " + KIDGARTN_NM +
+                "\n" +
+                " 소재지우편번호 : " + KIDGARTN_NM +
+                "\n" +
+                " 소재지지번주소 : " + KIDGARTN_NM
+    }
+}

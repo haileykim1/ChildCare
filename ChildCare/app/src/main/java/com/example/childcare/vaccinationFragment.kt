@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -134,7 +135,8 @@ class vaccinationFragment : Fragment() {
                 data: ccVaccination,
                 position: Int
             ) {
-                Toast.makeText(context, "상세 정보 출력", Toast.LENGTH_SHORT).show()
+                //Toast.makeText(context, "상세 정보 출력", Toast.LENGTH_SHORT).show()
+                ccVaccItem(data).show(fragmentManager!!, "vacc $position");
             }
         }
 
