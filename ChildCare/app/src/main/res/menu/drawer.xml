@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item1"
+        android:icon="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:title="경기도데이터드림"/>
+    <item
+        android:id="@+id/item5"
+        android:title="  : 어린이집현황(개방표준)"/>
+
+    <item
+        android:id="@+id/item2"
+        android:icon="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:title="경기도데이터드림"/>
+    <item
+        android:id="@+id/item6"
+        android:title="  : 어린이 국가예방접종 지정 의료기관 현황"/>
+
+    <item
+        android:id="@+id/item3"
+        android:icon="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:title="공공데이터포털"/>
+    <item
+        android:id="@+id/item7"
+        android:title="  : 전국어린이놀이시설정보서비스"/>
+
+    <item
+        android:id="@+id/item4"
+        android:icon="@drawable/ic_keyboard_arrow_right_black_24dp"
+        android:title="공공데이터포털" />
+    <item
+        android:id="@+id/item8"
+        android:title="  : 전국어린이보호구역표준데이터"/>
+</menu>
